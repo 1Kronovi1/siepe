@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .login-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+    }
+
+    .login-left {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    label {
+      font-size: 12px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      border: 1px solid #aaa;
+      height: 18px;
+      font-size: 12px;
+    }
+
+    button {
+      font-size: 11px;
+      padding: 2px 6px;
+      border: 1px solid #aaa;
+      border-radius: 10px;
+      background: #eee;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ddd;
+    }
+
+    .login-links {
+      margin-left: 8px;
+      font-size: 12px;
+    }
+
+    .login-links a {
+      color: #000080;
+      text-decoration: underline;
+      display: block;
+    }
+
+    .login-right {
+      font-size: 12px;
+      color: #000;
+    }
+
+    .error {
+      color: red;
+      margin-top: 5px;
+      font-size: 12px;
+    }
+
+    .img {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img {
+        width: 70%;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-row">
+    <form id="loginForm" class="login-left">
+      <label for="login">Login:</label>
+      <input type="text" id="login" name="login">
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" name="senha">
+      <button type="submit">Entrar</button>
+      <div class="login-links">
+        <a href="#">Cadastre-se</a>
+        <a href="#">Esqueceu sua senha?</a>
+      </div>
+    </form>
+    <div class="login-right">
+      Recife, sábado, 16 de agosto de 2025
+    </div>
+  </div>
+  <div class="img">
+    <img src="WhatsApp Image 2025-08-16 at 13.39.47.jpeg" alt="">
+  </div>
+
+  <p class="error" id="errorMsg"></p>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // evita recarregar a página
+
+      const login = document.getElementById("login").value;
+      const senha = document.getElementById("senha").value;
+
+      if (login === "1542209" && senha === "22br741974") {
+        window.location.href = "siepe.html"; // redireciona
+      } else {
+        document.getElementById("errorMsg").textContent = "Login ou senha incorretos!";
+      }
+    });
+  </script>
+</body>
+</html>
